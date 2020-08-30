@@ -1,2 +1,15 @@
 ---
 # tasks file for ansible-role-python
+    - name: dependencies installation 
+      vars:
+        prerequisites:
+          - python
+          - python-setuptools
+          - python-dev
+          - build-essential
+          - python-pip
+          - python-mysqldb
+          - python-pymysql  
+      apt:
+        pkg: "{{ prerequisites }}"
+        update_cache: yes
